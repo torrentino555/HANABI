@@ -1,19 +1,19 @@
 package com.example.HANABI.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
 public class User {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int user_id;
     private boolean mentor;
     private String first_name;
     private String last_name;
     private String email;
-
-    User(){}
 
     public int getUser_id() {
         return user_id;
