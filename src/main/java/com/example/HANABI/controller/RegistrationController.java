@@ -1,7 +1,7 @@
 package com.example.HANABI.controller;
 
 import com.example.HANABI.domain.Role;
-import com.example.HANABI.domain.User;
+import com.example.HANABI.domain.UserProjects;
 import com.example.HANABI.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,11 +22,11 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> model) {
-        User userFromDb = userRepo.findByUsername(user.getUsername());
+    public String addUser(UserProjects user, Map<String, Object> model) {
+        UserProjects userFromDb = userRepo.findByUsername(user.getUsername());
 
         if (userFromDb != null) {
-            model.put("message", "User exists!");
+            model.put("message", "UserProjects exists!");
             return "registration";
         }
 

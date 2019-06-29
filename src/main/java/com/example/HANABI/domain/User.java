@@ -1,62 +1,57 @@
 package com.example.HANABI.domain;
 
-import javax.annotation.Generated;
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "usr")
+@Table(name = "user")
 public class User {
-    public long getId() {
-        return id;
+
+    private int user_id;
+    private boolean mentor;
+    private String first_name;
+    private String last_name;
+    private String email;
+
+    User(){}
+
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public String getUsername() {
-        return username;
+    public boolean isMentor() {
+        return mentor;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setMentor(boolean mentor) {
+        this.mentor = mentor;
     }
 
-    public String getPassword() {
-        return password;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public boolean isActive() {
-        return active;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private String username;
-    private String password;
-    private boolean active;
-
-    @ElementCollection(targetClass =  Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
-
 }
