@@ -2,7 +2,7 @@ package com.example.HANABI.DTO;
 
 import java.util.List;
 
-public class tagsDTO {
+public class TagsDTO {
 
     private List<String> tags;
 

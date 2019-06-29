@@ -1,6 +1,6 @@
 package com.example.HANABI.DTO;
 
-public class tasksDTO {
+public class TasksDTO {
     private int id;
     private String title;
     private String description;
