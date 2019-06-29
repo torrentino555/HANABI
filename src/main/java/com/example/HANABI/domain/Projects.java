@@ -14,7 +14,7 @@ public class Projects {
     private String description;
 
     @OneToMany(mappedBy = "projectsId", cascade = CascadeType.ALL)
-    private Set<CompaniesProjects> CompaniesProjects;
+    private Set<CompaniesProjects> companiesProjects;
 
     @OneToMany(mappedBy = "projectsId", cascade = CascadeType.ALL)
     private Set<ProjectTags> ProjectTags;
