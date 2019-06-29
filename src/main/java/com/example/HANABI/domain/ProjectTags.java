@@ -1,13 +1,23 @@
 package com.example.HANABI.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "projects_tags")
 public class ProjectTags {
-    //TODO привязка
+
+    @Id
+    @ManyToOne
+    @JoinColumn
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = ("project_id"))
     private int projectId;
+
+    @Id
+    @ManyToOne
+    @JoinColumn
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = ("tag_id"))
     private int tagId;
     private String fieldname;
 

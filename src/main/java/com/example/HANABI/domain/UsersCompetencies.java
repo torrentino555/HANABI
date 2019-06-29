@@ -1,13 +1,10 @@
 package com.example.HANABI.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users_competencies")
 public class UsersCompetencies {
-    //TODO привязка
     public int getLanguageId() {
         return languageId;
     }
@@ -48,8 +45,15 @@ public class UsersCompetencies {
         this.level = level;
     }
 
+
+    @Id
+    @ManyToOne
+    @JoinColumn
     @Column(name = "language_id")
     private int languageId;
+    @Id
+    @ManyToOne
+    @JoinColumn
     @Column(name = "user_id")
     private int userId;
     @Column(name = "lines_of_codes")

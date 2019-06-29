@@ -30,6 +30,10 @@ import java.util.Set;
         private long languagesId;
         private String name;
 
+        @OneToMany(mappedBy = "languageId", cascade = CascadeType.ALL)
+        private Set<UsersCompetencies> usersCompetencies;
+
+
     }
 
 

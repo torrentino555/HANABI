@@ -1,15 +1,15 @@
 package com.example.HANABI.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
 public class User {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "uesr_id")
+    @Column(name = "user_id")
     private int userId;
     @Column(name = "mentor")
     private boolean mentor;
@@ -19,6 +19,14 @@ public class User {
     private String lastName;
     @Column(name = "email")
     private String email;
+
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    private Set<UsersCompetencies> usersCompetencies;
+
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    private Set<UserProjects> userProjects;
+
+
 
     public int getUserId() {
         return userId;

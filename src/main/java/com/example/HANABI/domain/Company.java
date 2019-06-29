@@ -1,6 +1,7 @@
 package com.example.HANABI.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "company")
@@ -14,6 +15,17 @@ public class Company {
     private String name;
     @Column(name = "description")
     private String description;
+
+    @OneToMany(mappedBy = "companyId", cascade = CascadeType.ALL)
+    private Set<CompaniesProjects> companiesProject;
+
+    public Set<CompaniesProjects> getCompaniesProject() {
+        return companiesProject;
+    }
+
+    public void setCompaniesProject(Set<CompaniesProjects> companiesProject) {
+        this.companiesProject = companiesProject;
+    }
 
     public int getCompanyId() {
         return companyId;

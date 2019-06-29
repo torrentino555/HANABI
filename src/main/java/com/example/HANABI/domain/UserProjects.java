@@ -28,9 +28,8 @@ public class UserProjects {
     @Column(name = "level")
     private int level;
 
-    @ElementCollection(targetClass =  Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    private Set<Projects> projects;
+
 
 }
