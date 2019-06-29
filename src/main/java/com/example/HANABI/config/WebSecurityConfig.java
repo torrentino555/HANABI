@@ -1,4 +1,4 @@
-package com.example.sweater.config;
+package com.example.HANABI.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
