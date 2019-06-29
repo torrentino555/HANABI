@@ -1,9 +1,11 @@
 package com.example.HANABI.DTO;
 
+import java.util.Set;
+
 public class UserProjectsDTO {
     private String nickname;
-    private String currentProjects;
-    private String completedProjects;
+    private Set<ProjectDTO> currentProjects;
+    private Set<ProjectDTO> completedProjects;
     private String description;
     private String responseStatus;
     private String message;
@@ -18,19 +20,19 @@ public class UserProjectsDTO {
         this.nickname = nickname;
     }
 
-    public String getCurrentProjects() {
+    public Set<ProjectDTO> getCurrentProjects() {
         return currentProjects;
     }
 
-    public void setCurrentProjects(String currentProjects) {
+    public void setCurrentProjects(Set<ProjectDTO> currentProjects) {
         this.currentProjects = currentProjects;
     }
 
-    public String getCompletedProjects() {
+    public Set<ProjectDTO> getCompletedProjects() {
         return completedProjects;
     }
 
-    public void setCompletedProjects(String completedProjects) {
+    public void setCompletedProjects(Set<ProjectDTO> completedProjects) {
         this.completedProjects = completedProjects;
     }
 
