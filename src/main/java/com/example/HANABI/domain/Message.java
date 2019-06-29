@@ -1,4 +1,4 @@
-package com.example.sweater.domain;
+package com.example.HANABI.domain;
 
 
 import javax.persistence.Entity;
