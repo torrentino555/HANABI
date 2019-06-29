@@ -1,32 +1,32 @@
-package com.example.HANABI.domain;
+package com.example.HANABI.DTO;
+
+import com.example.HANABI.domain.User;
+import com.example.HANABI.domain.UserProjects;
+import com.example.HANABI.domain.UsersCompetencies;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Table(name = "user_hanabi")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+public class UserDTO {
     private int userId;
-    @Column(name = "mentor")
     private Boolean mentor;
-    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "email")
     private String email;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UsersCompetencies> usersCompetencies;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UserProjects> userProjects;
 
-    User(){}
+    UserDTO(){}
+
+    public UserDTO(User user) {
+        this.userId = user.getUserId();
+        this.mentor = user.isMentor();
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.email = user.getEmail();
+        this.usersCompetencies = user.getUsersCompetencies();
+        this.userProjects = user.getUserProjects();
+    }
 
     public int getUserId() {
         return userId;
@@ -36,11 +36,11 @@ public class User {
         this.userId = userId;
     }
 
-    public boolean isMentor() {
+    public Boolean getMentor() {
         return mentor;
     }
 
-    public void setMentor(boolean mentor) {
+    public void setMentor(Boolean mentor) {
         this.mentor = mentor;
     }
 
@@ -66,14 +66,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Boolean getMentor() {
-        return mentor;
-    }
-
-    public void setMentor(Boolean mentor) {
-        this.mentor = mentor;
     }
 
     public Set<UsersCompetencies> getUsersCompetencies() {
