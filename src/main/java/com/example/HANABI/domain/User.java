@@ -20,12 +20,11 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UsersCompetencies> usersCompetencies;
 
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UserProjects> userProjects;
-
 
 
     public int getUserId() {

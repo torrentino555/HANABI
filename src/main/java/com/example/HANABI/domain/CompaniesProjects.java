@@ -1,35 +1,34 @@
 package com.example.HANABI.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "companies_projects")
-public class CompaniesProjects {
+public class CompaniesProjects implements Serializable {
 //TODO привязка
     @Id
     @ManyToOne
-    @JoinColumn
-    @Column(name = "company_id")
-    private int companyId;
+    @JoinColumn(name = "company_id")
+    private Company company;
     @Id
     @ManyToOne
-    @JoinColumn
-    @Column(name = "projects_id")
-    private int projectsId;
+    @JoinColumn(name = "projects_id")
+    private Projects projects;
 
-    public int getCompanyId() {
-        return companyId;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
-    public int getProjectsId() {
-        return projectsId;
+    public Projects getProjects() {
+        return projects;
     }
 
-    public void setProjectsId(int projectsId) {
-        this.projectsId = projectsId;
+    public void setProjects(Projects projects) {
+        this.projects = projects;
     }
 }

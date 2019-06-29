@@ -13,14 +13,17 @@ public class Projects {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "projectsId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "projects", cascade = CascadeType.ALL)
     private Set<CompaniesProjects> companiesProjects;
 
-    @OneToMany(mappedBy = "projectsId", cascade = CascadeType.ALL)
-    private Set<ProjectTags> ProjectTags;
+    @OneToMany(mappedBy = "projects", cascade = CascadeType.ALL)
+    private Set<ProjectTags> projectTags;
 
-    @OneToMany(mappedBy = "projectsId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "projects", cascade = CascadeType.ALL)
     private Set<ProjectsTasks> projectsTasks;
+
+    @OneToMany(mappedBy = "projects", cascade = CascadeType.ALL)
+    private Set<UserProjects> userProjects;
 
     public int getProjectId() {
         return projectId;

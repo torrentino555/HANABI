@@ -14,7 +14,7 @@ public class Tags {
     @Column(name = "description")
     String decription;
 
-    @OneToMany(mappedBy = "tagId", cascade = CascadeType.ALL)
-    private Set<ProjectTags> ProjectTags;
+    @OneToMany(mappedBy = "tags", cascade = CascadeType.ALL)
+    private Set<ProjectTags> projectTags;
 
 }

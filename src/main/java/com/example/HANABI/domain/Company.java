@@ -2,6 +2,8 @@ package com.example.HANABI.domain;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Entity
 @Table(name = "company")
@@ -16,8 +18,16 @@ public class Company {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "companyId", cascade = CascadeType.ALL)
+    public Company(String name, String description, CompaniesProjects ... companiesProject) {
+        this.name = name;
+        this.description = description;
+        for(CompaniesProjects companyProject : companiesProject) companyProject.setCompany(this);
+        this.companiesProject = Stream.of(companiesProject).collect(Collectors.toSet());
+    }
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private Set<CompaniesProjects> companiesProject;
+
 
     public Set<CompaniesProjects> getCompaniesProject() {
         return companiesProject;

@@ -1,22 +1,29 @@
 package com.example.HANABI.domain;
 
+import jdk.nashorn.internal.ir.PropertyKey;
+
 import javax.annotation.Generated;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "users_projects")
-public class UserProjects {
+public class UserProjects implements Serializable {
 
     UserProjects() {}
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
-    private long userId;
-    @Column(name = "projects_id")
-    private long projectsId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "projects_id")
+    private Projects projects;
+
     @Column(name = "story_point")
     private int storyPoint;
     @Column(name = "progress")
@@ -28,8 +35,6 @@ public class UserProjects {
     @Column(name = "level")
     private int level;
 
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
-    private Set<Projects> projects;
 
 
 }

@@ -2,7 +2,8 @@ package com.example.HANABI.domain;
 
 import javax.persistence.*;
 import java.util.Set;
-
+@Entity
+@Table(name = "task")
 public class Task {
     public int getTaskId() {
         return taskId;
@@ -31,11 +32,12 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "task_id")
-    int taskId;
-    int storyPoint;
-    String Description;
+    private int taskId;
 
-    @OneToMany(mappedBy = "taskId", cascade = CascadeType.ALL)
+    private int storyPoint;
+    private String Description;
+
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
     private Set<ProjectsTasks> projectsTasks;
 
 }

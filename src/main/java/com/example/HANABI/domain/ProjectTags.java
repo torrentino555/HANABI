@@ -1,40 +1,40 @@
 package com.example.HANABI.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "projects_tags")
-public class ProjectTags {
+public class ProjectTags implements Serializable {
 
     @Id
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "project_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = ("project_id"))
-    private int projectId;
+    private Projects projects;
 
     @Id
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "tag_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = ("tag_id"))
-    private int tagId;
+    private Tags tags;
+
     private String fieldname;
 
-    public int getProjectId() {
-        return projectId;
+    public Projects getProjects() {
+        return projects;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setProjects(Projects projects) {
+        this.projects = projects;
     }
 
-    public int getTagId() {
-        return tagId;
+    public Tags getTags() {
+        return tags;
     }
 
-    public void setTagId(int tagId) {
-        this.tagId = tagId;
+    public void setTags(Tags tags) {
+        this.tags = tags;
     }
 
     public String getFieldname() {

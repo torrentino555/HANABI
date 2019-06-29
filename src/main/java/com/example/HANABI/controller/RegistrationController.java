@@ -22,7 +22,7 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String addUser(User user, Map<String, Object> model) {
-        User userFromDb = userRepo.findByUsername(user.getEmail());
+        User userFromDb = userRepo.findByFirstName(user.getEmail());
 
         if (userFromDb != null) {
             model.put("message", "UserProjects exists!");

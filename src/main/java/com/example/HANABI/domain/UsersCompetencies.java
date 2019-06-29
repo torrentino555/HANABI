@@ -1,24 +1,25 @@
 package com.example.HANABI.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "users_competencies")
-public class UsersCompetencies {
-    public int getLanguageId() {
-        return languageId;
+public class UsersCompetencies implements Serializable {
+    public LanguagesAndTechnologies getLanguagesAndTechnologies() {
+        return languagesAndTechnologies;
     }
 
-    public void setLanguageId(int languageId) {
-        this.languageId = languageId;
+    public void setLanguagesAndTechnologies(LanguagesAndTechnologies languagesAndTechnologies) {
+        this.languagesAndTechnologies = languagesAndTechnologies;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getLinesOfCodes() {
@@ -45,17 +46,15 @@ public class UsersCompetencies {
         this.level = level;
     }
 
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "language_id")
+    private LanguagesAndTechnologies languagesAndTechnologies;
 
     @Id
     @ManyToOne
-    @JoinColumn
-    @Column(name = "language_id")
-    private int languageId;
-    @Id
-    @ManyToOne
-    @JoinColumn
-    @Column(name = "user_id")
-    private int userId;
+    @JoinColumn(name = "user_id")
+    private User user;
     @Column(name = "lines_of_codes")
     private int linesOfCodes;
     @Column(name = "starts")
