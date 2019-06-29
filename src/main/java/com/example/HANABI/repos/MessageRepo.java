@@ -1,6 +1,5 @@
 package com.example.HANABI.repos;
 
-import com.example.HANABI.domain.Message;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

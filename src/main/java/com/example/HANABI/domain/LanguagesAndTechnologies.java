@@ -6,6 +6,16 @@ import java.util.Set;
     @Entity
     @Table(name = "languages_and_technologies")
     public class LanguagesAndTechnologies {
+
+
+        public long getLanguagesId() {
+            return languagesId;
+        }
+
+        public void setLanguagesId(long languagesId) {
+            this.languagesId = languagesId;
+        }
+
         public String getName() {
             return name;
         }
@@ -14,17 +24,10 @@ import java.util.Set;
             this.name = name;
         }
 
-        public void setLanguages_id(long languages_id) {
-            this.languages_id = languages_id;
-        }
-
-        public long getLanguages_id() {
-            return languages_id;
-        }
-
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private long languages_id;
+        @Column(name="languages_id")
+        private long languagesId;
         private String name;
 
     }

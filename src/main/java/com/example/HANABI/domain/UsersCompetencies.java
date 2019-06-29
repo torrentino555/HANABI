@@ -1,39 +1,35 @@
 package com.example.HANABI.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "users_competencies")
 public class UsersCompetencies {
-    private int language_id;
-    private int user_id;
-    private int lines_of_codes;
-    private int stars;
-    private int level;
-
-    public int getLanguage_id() {
-        return language_id;
+    //TODO привязка
+    public int getLanguageId() {
+        return languageId;
     }
 
-    public void setLanguage_id(int language_id) {
-        this.language_id = language_id;
+    public void setLanguageId(int languageId) {
+        this.languageId = languageId;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getLines_of_codes() {
-        return lines_of_codes;
+    public int getLinesOfCodes() {
+        return linesOfCodes;
     }
 
-    public void setLines_of_codes(int lines_of_codes) {
-        this.lines_of_codes = lines_of_codes;
+    public void setLinesOfCodes(int linesOfCodes) {
+        this.linesOfCodes = linesOfCodes;
     }
 
     public int getStars() {
@@ -51,4 +47,17 @@ public class UsersCompetencies {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Column(name = "language_id")
+    private int languageId;
+    @Column(name = "user_id")
+    private int userId;
+    @Column(name = "lines_of_codes")
+    private int linesOfCodes;
+    @Column(name = "starts")
+    private int stars;
+    @Column(name = "level")
+    private int level;
+
+
 }
