@@ -1,0 +1,81 @@
+.header-first {
+    box-sizing: border-box;
+    height: 68px;
+    padding: 15px 12px 19px 12px;
+    display: grid;
+    grid-template-columns: 15px 23px 127px auto 25px 25px 74px 15px 74px;
+    grid-template-areas: "dropdown . logo . search . sign-in . sign-up";
+}
+
+.header-first__dropdown-icon {
+    grid-area: dropdown;
+    vertical-align: top;
+    width: 15px;
+    height: 9px;
+    background-image: url(../../images/icons/down-arrow.png);
+    margin-top: 9px;
+}
+
+.header-first__logo-img {
+    grid-area: logo;
+    margin-top: 2px;
+}
+
+.header-first__search-icon {
+    align-self: center;
+    grid-area: search;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../images/icons/search.png);
+}
+
+.header-first__button-sign-in {
+    grid-area: sign-in;
+    height: 34px;
+}
+
+.header-first__button-sign-up {
+    grid-area: sign-up;
+    color: white !important;
+    background-color: #0D55FF !important;
+    border: none !important;
+    height: 34px;
+}
+
+.header-second {
+    width: 100vw;
+    height: 177px;
+}
+
+.header-second__blue-back {
+    background-color: #0D55FF;
+    height: 68px;
+}
+
+.header-second__user-info {
+    position: relative;
+    top: -60px;
+    padding-left: 58px;
+    display: flex;
+}
+
+.header-second__info {
+    margin-top: 18px;
+    margin-left: 18px;
+}
+
+.header-second__avatar {
+    width: 139px;
+    height: 139px;
+}
+
+.header-second__nick {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.header-second__socials {
+    margin-top: 38px;
+    margin-left: -15px;
+}

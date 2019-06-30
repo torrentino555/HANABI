@@ -1,0 +1,8 @@
+.simple-button {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    border: 1px solid #ADB6BE;
+    border-radius: 4px;
+}

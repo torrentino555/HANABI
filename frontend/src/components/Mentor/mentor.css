@@ -1,0 +1,203 @@
+.mentor {
+    padding: 40px 58px;
+}
+
+.mentor__right-plus-button {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../images/icons/icon-plus.svg);
+}
+
+.mentor__progress-back {
+    width: 100%;
+    height: 18px;
+    background-color: #EAEAEA;
+    border-radius: 9px;
+}
+
+.mentor__progress-front {
+    height: 18px;
+    border-radius: 9px;
+}
+
+.mentor__progress-front_green {
+    background-color: #11D625;
+}
+
+.mentor__progress-front_yellow {
+    background-color: yellow;
+}
+
+.mentor__progress-front_red {
+    background-color: #FF0000;
+}
+
+.mentor-detail__list {
+    font-size: 20px;
+    color: #576271;
+    display: grid;
+    margin-bottom: 36px;
+    grid-template-columns: 310px 15px 354px 15px 271px 15px fit-content(100%);
+    grid-template-areas: "task . responsibility . competence . date";
+    align-items: center;
+}
+
+.mentor-detail__task {
+    grid-area: task;
+}
+
+.mentor-detail__responsibility {
+    grid-area: responsibility;
+}
+
+.mentor-detail__competence {
+    grid-area: competence;
+}
+
+.mentor-detail__date {
+    grid-area: date;
+}
+
+.mentor-detail__hr {
+    width: 100%;
+    height: 2px;
+    background-color: #EAEAEA;
+    margin-bottom: 21px;
+}
+
+.mentor-detail__first {
+    margin-bottom: 15px;
+}
+
+.mentor-dev-team {
+    font-size: 20px;
+    color: #576271;
+    display: grid;
+    margin-bottom: 36px;
+    grid-template-columns: 50px 36px 207px 15px 206px 15px 226px 15px 188px 15px fit-content(100%);
+    grid-template-areas: "avatar . name . position . competence . employment . actions";
+    align-items: center;
+}
+
+.mentor-dev-team__avatar {
+    grid-area: avatar;
+    width: 50px;
+}
+
+.mentor-dev-team__name {
+    grid-area: name;
+}
+
+.mentor-dev-team__position {
+    grid-area: position;
+}
+
+.mentor-dev-team__competence {
+    grid-area: competence;
+}
+
+.mentor-dev-team__employment {
+    grid-area: employment;
+}
+
+.mentor-dev-team__action {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+}
+
+.mentor-dev-team__actions {
+    grid-area: actions;
+    display: flex;
+}
+
+.mentor-dev-team__add-list {
+    cursor: pointer;
+    font-size: 20px;
+    color: #576271;
+    display: grid;
+    margin-bottom: 36px;
+    grid-template-columns: 20px 50px 36px fit-content(100%);
+    grid-template-areas: ". button . text";
+    align-items: center;
+}
+
+.mentor-dev-team__add-button {
+    grid-area: button;
+}
+
+.mentor-dev-team__add-text {
+    grid-area: text;
+}
+
+.mentor-dev-team__add-img {
+    width: 1008px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.mentor-dev-team__relative {
+    position: relative;
+}
+
+.ui.modal {
+    width: 1000px;
+}
+
+.mentor-dev-team__big-add-button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #0D55FF;
+    letter-spacing: 0.3ch;
+    color: white;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui.active.modal {
+    border-radius: 15px;
+}
+
+.mentor-dev-team__add-dev-text {
+    position: absolute;
+    top: -78px;
+    left: 84px;
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 3px 6px #000000;
+}
+
+.mentor-dev-team__back-icon {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: -78px;
+    left: 0;
+    background-image: url(../../images/icons/arrow-left.svg);
+}
+
+.mentor-dev-team__description-text {
+    padding: 13px;
+    position: absolute;
+    bottom: 67px;
+    left: 65px;
+    height: 115px;
+    width: 770px;
+    font-size: 14px;
+    color: black;
+    border-radius: 13px;
+    border: 1px solid #707070;
+}

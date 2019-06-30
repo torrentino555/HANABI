@@ -1,0 +1,1 @@
+export const selectCardState = (state: any) => state.card.state;
