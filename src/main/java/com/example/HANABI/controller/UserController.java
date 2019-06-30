@@ -30,6 +30,11 @@ public class UserController {
     @GetMapping("/userInfo")
     public ResponseEntity<UserProjectsDTO> getUserInfo(@RequestParam("nickname") String nickname) {
 
+        UserProjectsDTO  userProjectsDTO = getGeneratedUserProjectsDTO(nickname);
+        return ResponseEntity.ok(userProjectsDTO);
+    }
+
+    private UserProjectsDTO getGeneratedUserProjectsDTO(String nickname) {
         UserProjectsDTO  userProjectsDTO = new UserProjectsDTO();
         userProjectsDTO.setNickname(nickname);
         userProjectsDTO.setMessage("");
@@ -97,10 +102,8 @@ public class UserController {
         userProjectsDTO.setCurrentProjects(new HashSet<>(set));
         userProjectsDTO.setResponseStatus("SUCCESS");
 
-        
+
         userProjectsDTO.setDescription("We are the coolest company in the world. We are doing the coolest things in the world!");
-
-
-        return ResponseEntity.ok(userProjectsDTO);
+        return userProjectsDTO;
     }
 }
