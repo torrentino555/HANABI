@@ -19,7 +19,14 @@ public class TasksController {
     ResponseEntity<TasksAnswerDTO> getTasksByTag(@RequestBody TagsDTO tagsDTO) {
 
         TasksAnswerDTO tasksAnswerDTO = new TasksAnswerDTO();
-
+        List<TasksDTO> list = new ArrayList<>();
+        TasksDTO tasksDTO = new TasksDTO();
+        tasksDTO.setCountOfActiveTeams(6);
+        tasksDTO.setTitle("Developing of console game");
+        tasksDTO.setId(4);
+        tasksDTO.setDescription("Simple RPG game for PS4 with VR headset");
+        list.add(tasksDTO);
+        tasksAnswerDTO.setTasks(list);
         return ResponseEntity.ok(tasksAnswerDTO);
     }
 

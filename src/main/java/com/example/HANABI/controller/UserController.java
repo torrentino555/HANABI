@@ -97,7 +97,7 @@ public class UserController {
         userProjectsDTO.setCurrentProjects(new HashSet<>(set));
         userProjectsDTO.setResponseStatus("SUCCESS");
 
-        
+
         userProjectsDTO.setDescription("We are the coolest company in the world. We are doing the coolest things in the world!");
 
 
